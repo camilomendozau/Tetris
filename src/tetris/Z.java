@@ -9,16 +9,12 @@ import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
-/**
- *
- * @author camilo
- */
-public class T extends Figura{
-    private int cara;
+public class Z extends Figura{
+private int cara;
     
-    public T(int x,int y)
+    public Z(int x,int y)
     {
-       color = "lila"; 
+       color = "rojo"; 
        cara = 1;
        eje = new Unidad(color,x,y);
        this.establecerPosiciones();
@@ -41,32 +37,19 @@ public class T extends Figura{
     @Override
     public void establecerPosiciones() {
         System.out.println(cara);
-        if(this.estaEnRango())
-        {    
-            switch(cara)
-            {    
-                case 1:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
-                  u4 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-                  break;
-                case 2:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-                  u4 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  break;
-                case 3:
-                  u2 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-                  u3 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
-                  break;
-                case 4:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
-                  break;
-            }
-        }    
+      switch(cara)
+      {    
+          case 1:
+            u2 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
+            u3 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
+            u4 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
+            break;
+          case 2:
+            u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
+            u3 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
+            u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY()+eje.getTamano());
+            break;
+      }        
     }
     
     @Override
@@ -86,11 +69,10 @@ public class T extends Figura{
            cara = 1;
            this.establecerPosiciones();
         }
-    }
+    }    
 
     @Override
     public boolean estaEnRango() {
-       return cara >= 1 && cara <= 4;
+        return cara >= 1 && cara <= 2;
     }
-
 }

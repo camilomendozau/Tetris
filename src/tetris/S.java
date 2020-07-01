@@ -9,16 +9,12 @@ import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
-/**
- *
- * @author camilo
- */
-public class T extends Figura{
+public class S extends Figura{
     private int cara;
     
-    public T(int x,int y)
+    public S(int x,int y)
     {
-       color = "lila"; 
+       color = "verde"; 
        cara = 1;
        eje = new Unidad(color,x,y);
        this.establecerPosiciones();
@@ -47,23 +43,13 @@ public class T extends Figura{
             {    
                 case 1:
                   u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
-                  u4 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
+                  u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY()-eje.getTamano());
+                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
                   break;
                 case 2:
                   u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
                   u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-                  u4 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  break;
-                case 3:
-                  u2 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-                  u3 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
-                  break;
-                case 4:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
+                  u4 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
                   break;
             }
         }    
@@ -79,7 +65,7 @@ public class T extends Figura{
     public void girar() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         cara ++;  
-        if(this.estaEnRango())
+        if(cara >= 1 && cara <= 2)
         {
            this.establecerPosiciones(); 
         }else{
@@ -90,7 +76,6 @@ public class T extends Figura{
 
     @Override
     public boolean estaEnRango() {
-       return cara >= 1 && cara <= 4;
+        return cara >= 1 && cara <= 4;
     }
-
 }

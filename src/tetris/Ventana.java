@@ -77,7 +77,7 @@ public class Ventana extends javax.swing.JFrame{
 
     private void dibujarFigura() 
     {
-      Figura figura = new T(0,100);
+      Figura figura = new J(100,100);
       ArrayList lista = figura.getLista();
       Unidad unidad;
       for(int i = 0;i<lista.size();i++)

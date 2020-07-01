@@ -18,4 +18,5 @@ public abstract class Figura {
     abstract public void mover();
     abstract public void establecerPosiciones();
     abstract public ArrayList<Unidad> getLista();
+    abstract public boolean estaEnRango();
 }
