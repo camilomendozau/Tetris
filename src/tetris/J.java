@@ -14,7 +14,7 @@ public class J extends Figura{
     public J(int x,int y)
     {
        color = "azul"; 
-       cara = 4;
+       cara = 1;
        eje = new Unidad(color,x,y);
        this.establecerPosiciones();
        listaUnidades = new ArrayList<Unidad>();

@@ -5,9 +5,7 @@
  */
 package tetris;
 
-import java.awt.Component;
 import java.util.ArrayList;
-import javax.swing.JPanel;
 
 public class Z extends Figura{
 private int cara;

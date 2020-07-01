@@ -5,9 +5,7 @@
  */
 package tetris;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
+
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -77,7 +75,7 @@ public class Ventana extends javax.swing.JFrame{
 
     private void dibujarFigura() 
     {
-      Figura figura = new J(100,100);
+      Figura figura = new I(100,100);
       ArrayList lista = figura.getLista();
       Unidad unidad;
       for(int i = 0;i<lista.size();i++)

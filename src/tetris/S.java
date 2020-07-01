@@ -5,9 +5,7 @@
  */
 package tetris;
 
-import java.awt.Component;
 import java.util.ArrayList;
-import javax.swing.JPanel;
 
 public class S extends Figura{
     private int cara;
@@ -65,7 +63,7 @@ public class S extends Figura{
     public void girar() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         cara ++;  
-        if(cara >= 1 && cara <= 2)
+        if(this.estaEnRango())
         {
            this.establecerPosiciones(); 
         }else{
@@ -76,6 +74,6 @@ public class S extends Figura{
 
     @Override
     public boolean estaEnRango() {
-        return cara >= 1 && cara <= 4;
+        return cara >= 1 && cara <= 2;
     }
 }

@@ -5,19 +5,14 @@
  */
 package tetris;
 
-
 import java.util.ArrayList;
 
-/**
- *
- * @author camilo
- */
-public class T extends Figura{
-    private int cara;
+public class I extends Figura{
+   private int cara;
     
-    public T(int x,int y)
+    public I(int x,int y)
     {
-       color = "lila"; 
+       color = "celeste"; 
        cara = 1;
        eje = new Unidad(color,x,y);
        this.establecerPosiciones();
@@ -45,24 +40,14 @@ public class T extends Figura{
             switch(cara)
             {    
                 case 1:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
-                  u4 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
+                  u2 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
+                  u3 = new Unidad(color,eje.getPosX()+(eje.getTamano()*2),eje.getPosY());
+                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
                   break;
                 case 2:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-                  u4 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  break;
-                case 3:
-                  u2 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-                  u3 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
-                  break;
-                case 4:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
-                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
+                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());
+                  u3 = new Unidad(color,eje.getPosX(),eje.getPosY()+(eje.getTamano()*2));
+                  u4 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
                   break;
             }
         }    
@@ -89,7 +74,6 @@ public class T extends Figura{
 
     @Override
     public boolean estaEnRango() {
-       return cara >= 1 && cara <= 4;
-    }
-
+        return cara >= 1 && cara <= 2;
+    } 
 }
