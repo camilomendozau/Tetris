@@ -15,42 +15,26 @@ public class S extends Figura{
        color = "verde"; 
        cara = 1;
        eje = new Unidad(color,x,y);
-       this.establecerPosiciones();
        listaUnidades = new ArrayList<Unidad>();
-       listaUnidades.add(eje); listaUnidades.add(u2); listaUnidades.add(u3); listaUnidades.add(u4);
+       this.iniciarPosiciones();
     }        
 
-    /*@Override
-    public void dibujar(JPanel tablero) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
-    }*/
-
-    @Override
-    public void mover() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
     @Override
     public void establecerPosiciones() {
-        System.out.println(cara);
-        if(this.estaEnRango())
-        {    
+        System.out.println(eje.getX()+","+eje.getY());    
             switch(cara)
             {    
                 case 1:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY()-eje.getTamano());
-                  u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
+                  u2.setLocation(eje.getPosX(),eje.getPosY()-eje.getTamano());
+                  u3.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY()-eje.getTamano());
+                  u4.setLocation(eje.getPosX()-eje.getTamano(),eje.getPosY());
                   break;
                 case 2:
-                  u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
-                  u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-                  u4 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
+                  u2.setLocation(eje.getPosX(),eje.getPosY()-eje.getTamano());
+                  u3.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY());
+                  u4.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
                   break;
             }
-        }    
     }
     
     @Override
@@ -61,7 +45,6 @@ public class S extends Figura{
 
     @Override
     public void girar() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         cara ++;  
         if(this.estaEnRango())
         {
@@ -71,9 +54,19 @@ public class S extends Figura{
            this.establecerPosiciones();
         }
     }
+    
+    @Override
+    protected boolean estaEnRango()
+    {
+      return cara >= 1 && cara <= 2;
+    }
 
     @Override
-    public boolean estaEnRango() {
-        return cara >= 1 && cara <= 2;
+    protected void iniciarPosiciones() {
+        u2 = new Unidad(color,eje.getPosX(),eje.getPosY()-eje.getTamano());
+        u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY()-eje.getTamano());
+        u4 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
+        listaUnidades.add(eje); listaUnidades.add(u2); listaUnidades.add(u3); listaUnidades.add(u4);
     }
+
 }

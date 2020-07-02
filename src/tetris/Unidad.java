@@ -33,7 +33,9 @@ public class Unidad extends javax.swing.JLabel
         this.setBounds(posX, posY, tamano, tamano);
         ImageIcon imagen = new ImageIcon("/home/camilo/Documentos/Metodos y Tecnicas/Tetris/imagenes/unidad_"+ color +".png"); 
         this.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH)));
-        //this.setOpaque(false);
+        this.setLayout(null);
+        this.setOpaque(false);
+        this.setFocusable(true);
     }
 
     public int getTamano() {
@@ -45,11 +47,11 @@ public class Unidad extends javax.swing.JLabel
     }
 
     public int getPosX() {
-        return posX;
+        return this.getX();
     }
 
     public int getPosY() {
-        return posY;
+        return this.getY();
     }
     
     

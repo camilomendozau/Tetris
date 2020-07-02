@@ -13,31 +13,18 @@ public class O extends Figura{
     public O(int x,int y)
     {
        color = "amarillo"; 
-       cara = 2;
+       cara = 1;
        eje = new Unidad(color,x,y);
-       this.establecerPosiciones();
        listaUnidades = new ArrayList<Unidad>();
-       listaUnidades.add(eje); listaUnidades.add(u2); listaUnidades.add(u3); listaUnidades.add(u4);
+       this.iniciarPosiciones();
     }        
-
-    /*@Override
-    public void dibujar(JPanel tablero) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
-    }*/
-
-    @Override
-    public void mover() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
     @Override
     public void establecerPosiciones() {
-        System.out.println(cara);
-            u2 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
-            u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
-            u4 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());     
+        System.out.println(eje.getX()+","+eje.getY());
+            u2.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY());
+            u3.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
+            u4.setLocation(eje.getPosX(),eje.getPosY()+eje.getTamano());     
     }
     
     @Override
@@ -48,12 +35,19 @@ public class O extends Figura{
 
     @Override
     public void girar() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
            this.establecerPosiciones();
     }
 
     @Override
-    public boolean estaEnRango() {
+    protected boolean estaEnRango() {
         return true;
+    }
+
+    @Override
+    protected void iniciarPosiciones() {
+        u2 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
+        u3 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
+        u4 = new Unidad(color,eje.getPosX(),eje.getPosY()+eje.getTamano());    
+        listaUnidades.add(eje); listaUnidades.add(u2); listaUnidades.add(u3); listaUnidades.add(u4);
     }
 }

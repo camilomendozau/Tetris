@@ -12,11 +12,15 @@ public abstract class Figura {
    protected Unidad eje, u2 , u3, u4; 
    protected ArrayList<Unidad> listaUnidades;
    protected String color;
+   protected int cara;
    
-    //abstract public void dibujar(JPanel tablero);
+    abstract protected void iniciarPosiciones();    
     abstract public void girar();
-    abstract public void mover();
+    public void mover(int x, int y) {
+        eje.setLocation(x, y);
+        this.establecerPosiciones();
+    }        
     abstract public void establecerPosiciones();
     abstract public ArrayList<Unidad> getLista();
-    abstract public boolean estaEnRango();
+    abstract protected boolean estaEnRango();
 }
