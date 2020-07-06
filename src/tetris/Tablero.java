@@ -6,26 +6,38 @@
 package tetris;
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 public class Tablero extends JPanel implements KeyListener{
     
      private Figura figura;
      private int x,y;
+     private ActionListener ac;
+     private Timer timer;
     
     public Tablero ()
     {
-        x = 200; y = 200; 
+        x = 200; y = -40; 
         this.iniciarTablero();
         this.iniciarFigura();
-        this.dibujarFigura();
+        this.dibujarFiguraInicial();
+        ac = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {  
+              y = figura.caerLibremente(x, y);
+            }
+        
+        };
+        this.iniciarJuego();
     }
-    
     private void iniciarTablero()
     { 
       ImageIcon imagen = new ImageIcon("imagenes/fondo del cuadro de tetris .png");      
@@ -67,8 +79,7 @@ public class Tablero extends JPanel implements KeyListener{
                figura = new I(x,y);        
        }    
     }
-    
-    private void dibujarFigura() 
+    private void dibujarFiguraInicial() 
     {
       ArrayList lista = figura.getLista();
       Unidad unidad;
@@ -86,7 +97,7 @@ public class Tablero extends JPanel implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        switch(ke.getExtendedKeyCode())
+       switch(ke.getExtendedKeyCode())
         {
             case KeyEvent.VK_UP: 
               figura.girar();
@@ -103,11 +114,16 @@ public class Tablero extends JPanel implements KeyListener{
               figura.mover(x-40,y);
               x = x-40;
               break;
-        }
+        } 
     }
 
     @Override
     public void keyReleased(KeyEvent ke) {
+        
+    }
 
+    private void iniciarJuego() {
+       timer = new Timer(500,ac);
+       timer.start();   
     }
 }

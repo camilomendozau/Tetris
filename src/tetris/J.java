@@ -53,7 +53,7 @@ public class J extends Figura{
     {
         return listaUnidades;
     }
-
+    
     @Override
     public void girar() {
         cara ++;  
@@ -64,7 +64,7 @@ public class J extends Figura{
            cara = 1;
            this.establecerPosiciones();
         }
-    }    
+    }
 
     @Override
     public boolean estaEnRango() {

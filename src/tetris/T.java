@@ -7,6 +7,8 @@ package tetris;
 
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -59,19 +61,8 @@ public class T extends Figura{
     public ArrayList<Unidad> getLista()
     {
         return listaUnidades;
-    }
-
-    @Override
-    public void girar() {
-        cara ++;  
-        if(this.estaEnRango())
-        {
-           this.establecerPosiciones(); 
-        }else{
-           cara = 1;
-           this.establecerPosiciones();
-        }
     }  
+    
     
     @Override
     protected boolean estaEnRango()
@@ -85,5 +76,17 @@ public class T extends Figura{
         u3 = new Unidad(color,eje.getPosX()-eje.getTamano(),eje.getPosY());
         u4 = new Unidad(color,eje.getPosX()+eje.getTamano(),eje.getPosY());
         listaUnidades.add(eje); listaUnidades.add(u2); listaUnidades.add(u3); listaUnidades.add(u4);
+    }
+
+    @Override
+    public void girar() {
+        cara ++;  
+        if(this.estaEnRango())
+        {
+           this.establecerPosiciones(); 
+        }else{
+           cara = 1;
+           this.establecerPosiciones();
+        }
     }
 }

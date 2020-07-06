@@ -51,11 +51,10 @@ public class L extends Figura{
     public ArrayList<Unidad> getLista()
     {
         return listaUnidades;
-    }
-
+    }    
+    
     @Override
     public void girar() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         cara ++;  
         if(this.estaEnRango())
         {
@@ -64,7 +63,7 @@ public class L extends Figura{
            cara = 1;
            this.establecerPosiciones();
         }
-    }    
+    }
 
     @Override
     public boolean estaEnRango() {

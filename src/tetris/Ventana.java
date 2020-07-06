@@ -47,10 +47,8 @@ public class Ventana extends javax.swing.JFrame{
           imgFondo.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(1000, 800, Image.SCALE_SMOOTH)));
           fondo.add(imgFondo);
           fondo.setSize(1000, 800);    
-          fondo.setLayout(null);
-          
-          fondo.setOpaque(false);
-      
+          fondo.setLayout(null); 
+          fondo.setOpaque(false);   
           //fondo.setBackground(Color.MAGENTA);
           this.getContentPane().add(fondo);
       

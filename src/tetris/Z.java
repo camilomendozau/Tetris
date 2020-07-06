@@ -51,7 +51,7 @@ public class Z extends Figura{
     public ArrayList<Unidad> getLista()
     {
         return listaUnidades;
-    }
+    }    
 
     @Override
     public void girar() {
@@ -63,8 +63,8 @@ public class Z extends Figura{
            cara = 1;
            this.establecerPosiciones();
         }
-    }    
-
+    }
+    
     @Override
     public boolean estaEnRango() {
         return cara >= 1 && cara <= 2;

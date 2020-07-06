@@ -39,12 +39,6 @@ public class I extends Figura{
     }
     
     @Override
-    public ArrayList<Unidad> getLista()
-    {
-        return listaUnidades;
-    }
-
-    @Override
     public void girar() {
         cara ++;  
         if(this.estaEnRango())
@@ -54,6 +48,12 @@ public class I extends Figura{
            cara = 1;
            this.establecerPosiciones();
         }
+    }
+    
+    @Override
+    public ArrayList<Unidad> getLista()
+    {
+        return listaUnidades;
     }
 
     @Override

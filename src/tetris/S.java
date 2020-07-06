@@ -42,7 +42,7 @@ public class S extends Figura{
     {
         return listaUnidades;
     }
-
+    
     @Override
     public void girar() {
         cara ++;  
