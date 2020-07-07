@@ -20,12 +20,14 @@ public class Tablero extends JPanel implements KeyListener{
     
      private Figura figura;
      private int x,y;
+     private int retraso;
      private ActionListener ac;
-     private Timer timer;
+     private Timer timer; 
     
     public Tablero ()
     {
-        x = 200; y = -40; 
+        x = 200; y = -80;
+        retraso = 1000;
         this.iniciarTablero();
         this.iniciarFigura();
         this.dibujarFiguraInicial();
@@ -123,7 +125,7 @@ public class Tablero extends JPanel implements KeyListener{
     }
 
     private void iniciarJuego() {
-       timer = new Timer(500,ac);
+       timer = new Timer(retraso,ac);
        timer.start();   
     }
 }
