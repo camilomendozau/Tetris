@@ -122,7 +122,7 @@ public class Tablero extends JPanel implements KeyListener{
     }
 
     private void iniciarJuego() {
-       timer = new Timer(500,ac);
+       timer = new Timer(1000,ac);
        timer.start();   
     }
 }
