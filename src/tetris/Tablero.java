@@ -43,7 +43,6 @@ public class Tablero extends JPanel implements KeyListener{
     private void iniciarTablero()
     { 
       ImageIcon imagen = new ImageIcon("imagenes/fondo del cuadro de tetris .png");      
-      //tablero.setBackground(Color.YELLOW);
       this.setVisible(true);
       JLabel imgTablero = new JLabel();
       imgTablero.setSize(400, 800);
@@ -125,7 +124,11 @@ public class Tablero extends JPanel implements KeyListener{
     }
 
     private void iniciarJuego() {
+<<<<<<< HEAD
        timer = new Timer(retraso,ac);
+=======
+       timer = new Timer(1000,ac);
+>>>>>>> master
        timer.start();   
     }
 }
