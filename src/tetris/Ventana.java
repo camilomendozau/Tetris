@@ -5,8 +5,6 @@
  */
 package tetris;
 
-
-import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -53,7 +51,7 @@ public class Ventana extends javax.swing.JFrame implements ActionListener{
     
     private void iniciarFondo()
         { 
-          JPanel fondo = new JPanel();
+          fondo = new JPanel();
           JLabel imgFondo = new JLabel();    
           ImageIcon imagen = new ImageIcon("imagenes/fondo.png");
           imgFondo.setSize(1000, 800);

@@ -7,8 +7,6 @@ package tetris;
 
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -37,21 +35,29 @@ public class T extends Figura{
                   u2.setLocation(eje.getPosX(),eje.getPosY()-eje.getTamano());
                   u3.setLocation(eje.getPosX()-eje.getTamano(),eje.getPosY());
                   u4.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY());
+                  listaUnidades.clear();
+                  listaUnidades.add(0,eje); listaUnidades.add(1,u2); listaUnidades.add(2,u3); listaUnidades.add(3,u4);
                   break;
                 case 2:
                   u2.setLocation(eje.getPosX(),eje.getPosY()-eje.getTamano());
                   u3.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY());
                   u4.setLocation(eje.getPosX(),eje.getPosY()+eje.getTamano());
+                  listaUnidades.clear();
+                  listaUnidades.add(0,eje); listaUnidades.add(1,u2); listaUnidades.add(2,u3); listaUnidades.add(3,u4);
                   break;
                 case 3:
                   u2.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY());
                   u3.setLocation(eje.getPosX(),eje.getPosY()+eje.getTamano());
                   u4.setLocation(eje.getPosX()-eje.getTamano(),eje.getPosY());
+                  listaUnidades.clear();
+                  listaUnidades.add(0,eje); listaUnidades.add(1,u2); listaUnidades.add(2,u3); listaUnidades.add(3,u4);
                   break;
                 case 4:
                   u2.setLocation(eje.getPosX(),eje.getPosY()-eje.getTamano());
                   u3.setLocation(eje.getPosX(),eje.getPosY()+eje.getTamano());
                   u4.setLocation(eje.getPosX()-eje.getTamano(),eje.getPosY());
+                  listaUnidades.clear();
+                  listaUnidades.add(0,eje); listaUnidades.add(1,u2); listaUnidades.add(2,u3); listaUnidades.add(3,u4);
                   break;
             }
         }    
