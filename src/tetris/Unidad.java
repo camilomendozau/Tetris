@@ -56,8 +56,29 @@ public class Unidad extends javax.swing.JLabel
         return posY;
     }
     
+    public boolean estaEnRango(int n)
+    { boolean res = false;
+        switch(n)
+        {    
+          case 0: 
+            if(posX>=0)
+            {
+                res = true;
+            }
+            break;
+          case 1: 
+            if(posX<=360)
+            {
+                res = true;
+            }
+            break;  
+        }
+        return res;
+    }
+    
     public void actualizarPosiciones(int nuevoX, int nuevoY)
     {
+        this.setLocation(nuevoX, nuevoY);
         posX = nuevoX;
         posY = nuevoY;
     }

@@ -20,27 +20,23 @@ public class Tablero extends JPanel implements KeyListener{
     
      private Figura figura;
      private int x,y;
+     private int retraso;
+     ImageIcon imagen;
      private ActionListener ac;
-     private Timer timer;
+     private Timer timer; 
     
     public Tablero ()
     {
-        x = 200; y = -40; 
+        x = 200; y = -80;
+        retraso = 1500;
         this.iniciarTablero();
         this.iniciarFigura();
         this.dibujarFiguraInicial();
-        ac = new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae) {  
-              y = figura.caerLibremente(x, y);
-            }
-        
-        };
-        this.iniciarJuego();
+        this.desarrolloJuego();
     }
     private void iniciarTablero()
     { 
-      ImageIcon imagen = new ImageIcon("imagenes/fondo del cuadro de tetris .png");      
+      imagen = new ImageIcon("imagenes/fondo del cuadro de tetris .png");      
       this.setVisible(true);
       JLabel imgTablero = new JLabel();
       imgTablero.setSize(400, 800);
@@ -96,33 +92,48 @@ public class Tablero extends JPanel implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent ke) {
-       switch(ke.getExtendedKeyCode())
-        {
-            case KeyEvent.VK_UP: 
-              figura.girar();
-              break;
-            case KeyEvent.VK_DOWN:
-              figura.mover(x,y+40);
-              y = y+40;
-              break;
-            case KeyEvent.VK_RIGHT:
-              figura.mover(x+40,y);
-              x = x+40;
-              break;
-            case KeyEvent.VK_LEFT:
-              figura.mover(x-40,y);
-              x = x-40;
-              break;
-        } 
+        
     }
 
     @Override
     public void keyReleased(KeyEvent ke) {
-        
+        switch(ke.getExtendedKeyCode())
+        {
+          case KeyEvent.VK_UP: 
+            figura.girar();
+            break;
+          case KeyEvent.VK_DOWN:
+             if(figura.estaEnTablero(2))
+             {    
+               figura.mover(x,y+40);
+               y = y+40;
+             }  
+            break;
+          case KeyEvent.VK_RIGHT:
+             if(figura.estaEnTablero(0))
+             {    
+               figura.mover(x+40,y);
+               x = x+40;
+             }
+            break;
+          case KeyEvent.VK_LEFT:   
+             if(figura.estaEnTablero(1))
+             {  
+               figura.mover(x-40,y);
+               x = x-40;
+             }  
+            break;
+        }
     }
 
-    private void iniciarJuego() {
-       timer = new Timer(500,ac);
-       timer.start();   
+    private void desarrolloJuego(){
+       ac = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {  
+              y = figura.caerLibremente(x, y);
+            }
+       };
+       timer = new Timer(retraso,ac); 
+       timer.start();  
     }
 }
