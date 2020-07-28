@@ -20,19 +20,27 @@ public class Tablero extends JPanel implements KeyListener{
     
      private Figura figura;
      private int x,y;
-     private int retraso;
+     private int retrasoCaida;
      ImageIcon imagen;
      private ActionListener ac;
      private Timer timer; 
+     private boolean figuraEstaAcomodada;
+   
     
     public Tablero ()
     {
-        x = 200; y = -80;
-        retraso = 1500;
+        //x = 200; y = -80;
+        figuraEstaAcomodada = false;
+        retrasoCaida = 1500;
         this.iniciarTablero();
-        this.iniciarFigura();
-        this.dibujarFiguraInicial();
-        this.desarrolloJuego();
+        ac = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {     
+                y = figura.caerLibremente(x, y);
+                figuraEstaAcomodada=figura.estaAcomodado();
+            }
+        };
+       this.iniciarJuego();
     }
     private void iniciarTablero()
     { 
@@ -92,21 +100,14 @@ public class Tablero extends JPanel implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        
-    }
-
-    @Override
-    public void keyReleased(KeyEvent ke) {
         switch(ke.getExtendedKeyCode())
         {
-          case KeyEvent.VK_UP: 
-            figura.girar();
-            break;
           case KeyEvent.VK_DOWN:
              if(figura.estaEnTablero(2))
              {    
                figura.mover(x,y+40);
                y = y+40;
+               this.analizarJuego();
              }  
             break;
           case KeyEvent.VK_RIGHT:
@@ -119,21 +120,57 @@ public class Tablero extends JPanel implements KeyListener{
           case KeyEvent.VK_LEFT:   
              if(figura.estaEnTablero(1))
              {  
-               figura.mover(x-40,y);
-               x = x-40;
+                figura.mover(x-40,y);
+                x = x-40; 
              }  
             break;
         }
     }
 
-    private void desarrolloJuego(){
-       ac = new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae) {  
-              y = figura.caerLibremente(x, y);
-            }
-       };
-       timer = new Timer(retraso,ac); 
-       timer.start();  
+    @Override
+    public void keyReleased(KeyEvent ke) {
+        if(ke.getExtendedKeyCode()==KeyEvent.VK_UP)
+        {    
+            if(x!=360 || x!=0)
+            {     
+                figura.girar();
+            }else{
+              figura.mover(x-40, y);
+              figura.girar();
+              //eje.actualizarPosiciones(x,y);
+              //figura.establecerPosiciones();
+            }       
+        }
     }
-}
+
+    private void analizarJuego(){
+        if(figuraEstaAcomodada()){
+            timer.stop();
+            this.dibujarFiguraFinal();
+            this.iniciarJuego();        
+        }        
+    }
+    private boolean figuraEstaAcomodada()
+    {
+        figuraEstaAcomodada = y==760 || y==720;
+        return figuraEstaAcomodada;
+    }
+            
+    private void iniciarJuego(){
+            x = 200; y = -80;
+            this.iniciarFigura();
+            this.dibujarFiguraInicial();
+            timer = new Timer(retrasoCaida,ac);
+            timer.start();       
+    }
+    private void dibujarFiguraFinal(){
+       ArrayList lista = figura.getLista();
+      Unidad unidad;
+      for(int i = 0;i<lista.size();i++)
+      {    
+        unidad = (Unidad) lista.get(i);
+        this.add(unidad);
+      }       
+    }
+       
+}    

@@ -27,8 +27,8 @@ public class T extends Figura{
     @Override
     public void establecerPosiciones() {
         System.out.println(eje.getX()+","+eje.getY());
-        if(this.estaEnRango())
-        {    
+        //if(eje.getX()!=0)
+        //{    
             switch(cara)
             {    
                 case 1:
@@ -60,7 +60,7 @@ public class T extends Figura{
                   listaUnidades.add(0,eje); listaUnidades.add(1,u2); listaUnidades.add(2,u3); listaUnidades.add(3,u4);
                   break;
             }
-        }    
+        //}    
     }
     
     @Override
@@ -87,9 +87,9 @@ public class T extends Figura{
     @Override
     public void girar() {
         cara ++;  
-        if(this.estaEnRango())
+        if(this.estaEnRango() )
         {
-           this.establecerPosiciones(); 
+            this.establecerPosiciones(); 
         }else{
            cara = 1;
            this.establecerPosiciones();

@@ -61,17 +61,13 @@ public class Unidad extends javax.swing.JLabel
         switch(n)
         {    
           case 0: 
-            if(posX>=0)
-            {
-                res = true;
-            }
+              res = posX<=360;
             break;
+
           case 1: 
-            if(posX<=360)
-            {
-                res = true;
-            }
+              res = posX>=0;
             break;  
+  
         }
         return res;
     }

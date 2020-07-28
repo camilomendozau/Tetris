@@ -50,7 +50,7 @@ public class Ventana extends javax.swing.JFrame implements ActionListener{
     }        
     
     private void iniciarFondo()
-        { 
+    { 
           fondo = new JPanel();
           JLabel imgFondo = new JLabel();    
           ImageIcon imagen = new ImageIcon("imagenes/fondo.png");

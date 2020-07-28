@@ -12,7 +12,6 @@ public abstract class Figura {
    protected ArrayList<Unidad> listaUnidades;
    protected String color;
    protected int cara;
-   
     abstract protected void iniciarPosiciones();   
     abstract public void girar();
     public int caerLibremente(int x, int y)
@@ -24,6 +23,10 @@ public abstract class Figura {
       return res; 
     }
          
+    public boolean estaAcomodado(){
+        return eje.getY()==760;
+    }
+    
     public void mover(int x, int y) {  
         eje.actualizarPosiciones(x, y);
         this.establecerPosiciones();   
@@ -34,7 +37,7 @@ public abstract class Figura {
       switch(n)
       {  
           case 0:
-              res = eje.getPosX()<=320 && u2.getPosY()<=320 && u3.getPosX()<=320 && u4.getPosX()<=320;
+              res = eje.estaEnRango(n) && u2.estaEnRango(n) && u3.estaEnRango(n) && u4.estaEnRango(n);
             break;
           case 1:
               res = eje.getPosX()>=40 && u2.getPosY()>=40 && u3.getPosX()>=40 && u4.getPosX()>=40;
