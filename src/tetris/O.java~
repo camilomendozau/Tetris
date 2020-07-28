@@ -8,7 +8,7 @@ package src.tetris;
 import java.util.ArrayList;
 
 public class O extends Figura{
-   // private final int cara;
+    private final int cara;
     
     public O(int x,int y)
     {
@@ -21,7 +21,7 @@ public class O extends Figura{
     
     @Override
     public void establecerPosiciones() {
-        //System.out.println(eje.getX()+","+eje.getY());
+        /System.out.println(eje.getX()+","+eje.getY());
             u2.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY());
             u3.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
             u4.setLocation(eje.getPosX(),eje.getPosY()+eje.getTamano());     

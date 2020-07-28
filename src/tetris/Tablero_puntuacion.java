@@ -3,23 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris;
+package src.tetris;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+
 /**
  *
  * @author Beimar
  */
 public class Tablero_puntuacion extends JPanel {
+       // JTextField textField
+       private int score;
+       private int linea;
+       private int nivel;
      public Tablero_puntuacion(){
         this.iniciarTabla();
      }
      private void iniciarTabla(){
-         ImageIcon imagen = new ImageIcon("imagenes/TabPos.png");      
+      ImageIcon imagen = new ImageIcon("imagenes/TabPos.png");      
       this.setVisible(true);
       JLabel imgPuntuacion = new JLabel();
       imgPuntuacion.setSize(260, 420);
@@ -30,5 +35,5 @@ public class Tablero_puntuacion extends JPanel {
       this.setBounds(20,360, 260, 450);  
       this.setFocusable(true);
      }
-    
+     
 }

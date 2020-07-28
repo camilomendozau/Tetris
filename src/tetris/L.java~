@@ -4,7 +4,7 @@ package src.tetris;
 import java.util.ArrayList;
 
 public class L extends Figura{
-   // private int cara;
+    private int cara;
     
     public L(int x,int y)
     {
@@ -17,7 +17,7 @@ public class L extends Figura{
 
     @Override
     public void establecerPosiciones() {
-     // System.out.println(eje.getX()+","+eje.getY());
+      System.out.println(eje.getX()+","+eje.getY());
       switch(cara)
       {    
           case 1:

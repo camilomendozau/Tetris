@@ -38,9 +38,9 @@ public class VentanaInicio extends javax.swing.JFrame implements ActionListener 
 
     private void iniciarComponentes() {
          this.logo();
-         this.colocarBotones();
          this.iniciarFondo();
-    }
+         this.colocarBotones();
+       }
     private void iniciarFondo()
         { 
           fondo = new JPanel();
@@ -74,14 +74,14 @@ public class VentanaInicio extends javax.swing.JFrame implements ActionListener 
          boton1.setIcon(new ImageIcon(clic.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH)));
          // boton1.setEnabled(true);//
          //boton1.setMnemonic()//para dar comando con el teclado
-         //fondo.add(boton1);
-         this.getContentPane().add(boton1);
+         fondo.add(boton1);
+     
          //boton cierre del programa
           boton2.setBounds(150,400,200,40);
           ImageIcon click= new ImageIcon("imagenes/salir.png");
           boton2.setIcon(new ImageIcon(click.getImage().getScaledInstance(boton2.getWidth()+20, boton2.getHeight()+20, Image.SCALE_SMOOTH)));
-          //fondo.add(boton2);
-          this.getContentPane().add(boton2);
+          fondo.add(boton2);
+       
           boton1.addActionListener(this);
           boton2.addActionListener(this);
     }
@@ -94,8 +94,8 @@ public class VentanaInicio extends javax.swing.JFrame implements ActionListener 
                dispose();
             
         }
-        if(e.getSource()==boton2){
-               System.exit(WIDTH);
+           if(e.getSource()==boton2){
+           System.exit(WIDTH);
            }
       }
     

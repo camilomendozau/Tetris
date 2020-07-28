@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class I extends Figura{
    
-    //private int cara;
+    private int cara;
     
     public I(int x,int y)
     {
@@ -18,7 +18,7 @@ public class I extends Figura{
     
     @Override
     public void establecerPosiciones() {
-      //  System.out.println(eje.getX()+","+eje.getY());   
+        /System.out.println(eje.getX()+","+eje.getY());   
         switch(cara)
         {    
            case 1:

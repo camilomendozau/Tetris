@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tetris;
+package src.tetris;
 
 import java.util.ArrayList;
 
 public class Z extends Figura{
     
-    private int cara;
+    //private int cara;
     
     public Z(int x,int y)
     {
@@ -31,7 +31,7 @@ public class Z extends Figura{
 
     @Override
     public void establecerPosiciones() {
-        System.out.println(eje.getX()+","+eje.getY());
+       // System.out.println(eje.getX()+","+eje.getY());
       switch(cara)
       {    
           case 1:
