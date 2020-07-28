@@ -3,12 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
+package src.tetris;
+=======
 package tetris;
+>>>>>>> master
 
 import java.util.ArrayList;
 
 public class O extends Figura{
+<<<<<<< HEAD
+   // private final int cara;
+=======
     private final int cara;
+>>>>>>> master
     
     public O(int x,int y)
     {
@@ -21,7 +29,11 @@ public class O extends Figura{
     
     @Override
     public void establecerPosiciones() {
+<<<<<<< HEAD
+        //System.out.println(eje.getX()+","+eje.getY());
+=======
         System.out.println(eje.getX()+","+eje.getY());
+>>>>>>> master
             u2.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY());
             u3.setLocation(eje.getPosX()+eje.getTamano(),eje.getPosY()+eje.getTamano());
             u4.setLocation(eje.getPosX(),eje.getPosY()+eje.getTamano());     

@@ -1,10 +1,18 @@
 
+<<<<<<< HEAD
+package src.tetris;
+=======
 package tetris;
+>>>>>>> master
 
 import java.util.ArrayList;
 
 public class L extends Figura{
+<<<<<<< HEAD
+   // private int cara;
+=======
     private int cara;
+>>>>>>> master
     
     public L(int x,int y)
     {
@@ -17,7 +25,11 @@ public class L extends Figura{
 
     @Override
     public void establecerPosiciones() {
+<<<<<<< HEAD
+     // System.out.println(eje.getX()+","+eje.getY());
+=======
       System.out.println(eje.getX()+","+eje.getY());
+>>>>>>> master
       switch(cara)
       {    
           case 1:

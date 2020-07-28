@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Unidad
+comment0.text=\r\n\r\n\ @author\ camilo\r\n
+comment1.params=color\ x\ y
+comment1.target=Unidad(java.lang.String,\ int,\ int)
+comment2.params=
+comment2.target=void\ iniciarComponente()
+comment3.params=
+comment3.target=int\ getTamano()
+comment3.text=public\ void\ eliminar_unidad(){\r\n\ \ \ \ \ \ \ \ this.remove(this);\r\n}
+comment4.params=
+comment4.target=java.lang.String\ getColor()
+comment5.params=
+comment5.target=int\ getPosX()
+comment6.params=
+comment6.target=int\ getPosY()
+comment7.params=nuevoX\ nuevoY
+comment7.target=void\ actualizarPosiciones(int,\ int)
+comment8.params=n
+comment8.target=boolean\ estaEnRango(int)
+numComments=9

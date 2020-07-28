@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Fila
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Fila\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=y
+comment1.target=Fila(int)
+comment2.params=
+comment2.target=boolean\ estaLleno()
+comment3.params=
+comment3.target=void\ limpiarFila()
+comment4.params=
+comment4.target=void\ generarFila()
+comment5.params=nuevaY
+comment5.target=void\ setPosicionY(int)
+comment6.params=
+comment6.target=java.util.ArrayList\ getListaf()
+comment7.params=
+comment7.target=void\ imprimirFila()
+numComments=8

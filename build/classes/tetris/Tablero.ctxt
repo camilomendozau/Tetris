@@ -1,0 +1,36 @@
+#BlueJ class context
+comment0.target=Tablero
+comment1.params=
+comment1.target=Tablero()
+comment10.params=ke
+comment10.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment11.params=ke
+comment11.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment12.params=aumentoX\ aumentoY
+comment12.target=void\ cambioRotacion(int,\ int)
+comment13.params=ke
+comment13.target=void\ keyReleased(java.awt.event.KeyEvent)
+comment14.params=
+comment14.target=void\ analizarJuego()
+comment14.text=private\ void\ desarrolloJuego(){\r\n\ \ \ \ \ \ \ ac\ \=\ new\ ActionListener(){\r\n\ \ \ \ \ \ \ \ \ \ \ \ @Override\r\n\ \ \ \ \ \ \ \ \ \ \ \ public\ void\ actionPerformed(ActionEvent\ ae)\ {\ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ //\ y\ \=\ figura.caerLibremente(x,\ y);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ if(y<figura.getInferior())\ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tableroLogico.retomarEstado(listaAntigua);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ figura.mover(x,\ y+40);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ \=\ y+40;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tableroLogico.setPosicionesFigura(figura.getLista());\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tableroLogico.analizarTablero();\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ tableroLogico.imprimirTab();\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //}\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ };\r\n\ \ \ \ \ \ \ timer\ \=\ new\ Timer(retraso,ac);\ \r\n\ \ \ \ \ \ \ timer.start();\ \ \r\n}
+comment15.params=
+comment15.target=boolean\ figuraEstaAcomodada()
+comment16.params=
+comment16.target=void\ dibujarFiguraFinal()
+comment2.params=ae
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=void\ iniciarJuego()
+comment4.params=
+comment4.target=void\ iniciarTablero()
+comment5.params=
+comment5.target=void\ iniciarFigura()
+comment6.params=
+comment6.target=void\ iniciarY()
+comment7.params=
+comment7.target=void\ iniciaFiguras()
+comment8.params=fig
+comment8.target=void\ dibujarFiguraInicial1(Figura)
+comment9.params=
+comment9.target=void\ dibujarFiguraInicial()
+numComments=17
