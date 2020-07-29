@@ -1,12 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris;
-
 import java.util.ArrayList;
 
+/**
+ * Write a description of class Fila here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
 public class Fila{
     private ArrayList<Casilla> fila;
     private int y;
@@ -33,6 +33,7 @@ public class Fila{
     public void limpiarFila(){
      for(Casilla cas: fila){
         cas.vaciar();
+        
      }
    }
    private void generarFila(){
@@ -65,4 +66,3 @@ public class Fila{
     
    }
 }
-

@@ -1,11 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris;
 
 
+/**
+ * Write a description of class Casilla here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
 public class Casilla{
     private boolean isFull;
     private Unidad uni;
@@ -26,19 +27,17 @@ public class Casilla{
        isFull = true;
    }
    public void cambiarEstado(){
-       if(isFull == true){
-           isFull= false;
-       }else{
-           isFull= true;
-       }
-    
+      isFull= false;
+      //uni= null;   
    }
    public void vaciar(){
-       isFull = false;
+      isFull = false;
+      uni.setIcon(null);
+      uni.revalidate();
+      uni = null;
    }
    public void setPosY(int nuevaCY){
      y = nuevaCY;
     
     }
 }
-

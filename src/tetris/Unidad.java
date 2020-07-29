@@ -35,8 +35,11 @@ public class Unidad extends javax.swing.JLabel
         this.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH)));
         this.setLayout(null);
         this.setOpaque(false);
-        this.setFocusable(true);
+      //  this.setFocusable(true);
     }
+    /*public void eliminar_unidad(){
+        this.remove(this);
+    }*/
 
     public int getTamano() {
         return tamano;
@@ -56,26 +59,29 @@ public class Unidad extends javax.swing.JLabel
         return posY;
     }
     
-    public boolean estaEnRango(int n)
-    { boolean res = false;
-        switch(n)
-        {    
-          case 0: 
-              res = posX<=360;
-            break;
-
-          case 1: 
-              res = posX>=0;
-            break;  
-  
-        }
-        return res;
-    }
-    
     public void actualizarPosiciones(int nuevoX, int nuevoY)
     {
         this.setLocation(nuevoX, nuevoY);
         posX = nuevoX;
         posY = nuevoY;
+    }
+    public boolean estaEnRango(int n)
+    { boolean res = false;
+        switch(n)
+        {    
+          case 0: 
+            if(posX>=0)
+            {
+                res = true;
+            }
+            break;
+          case 1: 
+            if(posX<=360)
+            {
+                res = true;
+            }
+            break;  
+        }
+        return res;
     }
 }

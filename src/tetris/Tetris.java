@@ -12,7 +12,8 @@ public class Tetris {
      */
     public static void main(String[] args) {
      
-       new VentanaInicio();
+        VentanaInicio ventanaInicio =new VentanaInicio();
+        //Game_over game_over = new Game_over();
     }
     
 }

@@ -5,6 +5,8 @@
  */
 package tetris;
 
+
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -17,9 +19,9 @@ import javax.swing.JPanel;
 
 public class Ventana extends javax.swing.JFrame implements ActionListener{
 
-    
     private Tablero tablero;
     private Tablero_puntuacion Tab_pun;
+    private NextFig sigteF;
      JPanel fondo;
      JButton boton1;
     public Ventana()
@@ -42,16 +44,18 @@ public class Ventana extends javax.swing.JFrame implements ActionListener{
       tablero = new Tablero();
       this.getContentPane().add(tablero);
       Tab_pun =new Tablero_puntuacion();
+      //tab_pun.setvis
       this.getContentPane().add(Tab_pun);
+      sigteF = new NextFig();
+      this.getContentPane().add(sigteF);
       this.logo();
       this.colocarBotones();
       this.iniciarFondo();
-     
     }        
     
     private void iniciarFondo()
-    { 
-          fondo = new JPanel();
+        { 
+          JPanel fondo = new JPanel();
           JLabel imgFondo = new JLabel();    
           ImageIcon imagen = new ImageIcon("imagenes/fondo.png");
           imgFondo.setSize(1000, 800);
@@ -89,5 +93,5 @@ public class Ventana extends javax.swing.JFrame implements ActionListener{
         icono.setBounds(20,60,300,300);
         icono.setLayout(null);
         this.getContentPane().add(icon);
-       }
+    }
 }
