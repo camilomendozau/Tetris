@@ -4,9 +4,9 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
+PROJECT TITLE: Juego Tetris
+PURPOSE OF PROJECT: Practica de para desarrollar el juego
+VERSION or DATE: v1
+HOW TO START THIS PROJECT: Descargar el paquete, debe tener instalado JRE Y JDK
+AUTHORS: Camilo Mendoza
 USER INSTRUCTIONS:
